@@ -1,0 +1,68 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Subscription streaming use by age, 2024",
+  "width": 600,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/d31e53f3e93283d59f5e05071c829269c9563a68/data/media_by_age.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+  {
+    "name": "selectedYear",
+    "value": 2024,
+    "bind": {
+      "input": "select",
+      "options": [2023, 2024],
+      "name": "Survey year: "
+    }
+  }
+],
+  "transform": [
+  {
+    "filter": "datum.year == selectedYear && datum.question == 'C1' && datum.media_type == 'Online subscription services'"
+  }
+],
+  "mark": {
+    "type": "bar",
+    "color": "#4169A1"
+  },
+  "encoding": {
+    "y": {
+      "field": "age_group",
+      "type": "ordinal",
+      "sort": [
+        "18-24",
+        "25-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65-74",
+        "75+"
+      ],
+      "title": "Age group"
+    },
+    "x": {
+      "field": "percentage",
+      "type": "quantitative",
+      "scale": {"domain": [0, 100]},
+      "title": "Used in the past seven days (%)"
+    },
+    "tooltip": [
+      {
+        "field": "age_group",
+        "type": "ordinal",
+        "title": "Age"
+      },
+      {
+        "field": "percentage",
+        "type": "quantitative",
+        "title": "Usage (%)"
+      }
+    ]
+  },
+  "config": {
+    "font": "Arial",
+    "view": {"stroke": null}
+  }
+}
