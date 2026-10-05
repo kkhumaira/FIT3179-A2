@@ -1,0 +1,41 @@
+year,platform,metric,percentage,recall_period,population,sample_n,source_report,source_pdf_page,question
+2025,Facebook,Watched video on platform,60,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,Instagram,Watched video on platform,45,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,TikTok,Watched video on platform,22,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,X,Watched video on platform,11,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,Reddit,Watched video on platform,11,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,Snapchat,Watched video on platform,9,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,LinkedIn,Watched video on platform,8,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,Pinterest,Watched video on platform,5,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,Telegram,Watched video on platform,3,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,Threads,Watched video on platform,3,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,RedNote,Watched video on platform,2,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,Tumblr,Watched video on platform,1,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,BlueSky,Watched video on platform,1,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,Quora,Watched video on platform,1,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,50,C1e
+2025,Facebook,Currently has account,78,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,59,SOCIAL1
+2025,Facebook,Used platform for any purpose,76,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,59,SOCIAL2
+2025,Instagram,Currently has account,55,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,59,SOCIAL1
+2025,Instagram,Used platform for any purpose,53,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,59,SOCIAL2
+2025,YouTube,Currently has account,55,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,59,SOCIAL1
+2025,YouTube,Used platform for any purpose,65,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,59,SOCIAL2
+2025,LinkedIn,Currently has account,27,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL1
+2025,LinkedIn,Used platform for any purpose,23,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL2
+2025,TikTok,Currently has account,24,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL1
+2025,TikTok,Used platform for any purpose,24,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL2
+2025,Snapchat,Currently has account,22,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL1
+2025,Snapchat,Used platform for any purpose,18,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL2
+2025,Reddit,Currently has account,20,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL1
+2025,Reddit,Used platform for any purpose,23,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL2
+2025,X,Currently has account,19,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL1
+2025,X,Used platform for any purpose,18,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL2
+2025,Pinterest,Currently has account,18,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL1
+2025,Pinterest,Used platform for any purpose,17,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL2
+2025,Telegram,Currently has account,8,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL1
+2025,Telegram,Used platform for any purpose,8,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL2
+2025,Threads,Currently has account,7,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL1
+2025,Threads,Used platform for any purpose,6,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL2
+2025,Tumblr,Currently has account,5,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,60,SOCIAL1
+2025,Tumblr,Used platform for any purpose,3,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,61,SOCIAL2
+2025,Quora,Currently has account,4,Current,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,61,SOCIAL1
+2025,Quora,Used platform for any purpose,3,Past 6 months,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,61,SOCIAL2

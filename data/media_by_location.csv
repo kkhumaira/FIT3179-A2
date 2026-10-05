@@ -1,0 +1,23 @@
+year,media_type,location_group,percentage,recall_period,source_report,source_pdf_page,question
+2024,Free video streaming services,Capital city,64,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,Free video streaming services,Outside capital city,50,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,Other websites or apps,Capital city,50,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,Other websites or apps,Outside capital city,45,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,NET FTA on-demand TV,Capital city,45,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,NET FTA on-demand TV,Outside capital city,51,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,NET FTA broadcast,Capital city,51,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,NET FTA broadcast,Outside capital city,66,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2025,NET FTA broadcast,Capital city,50,Past 7 days,television-media-survey-2025-summary-report.pdf,42,C1
+2025,NET FTA broadcast,Outside capital city,67,Past 7 days,television-media-survey-2025-summary-report.pdf,42,C1
+2025,NET Streaming services,Capital city,80,Past 7 days,television-media-survey-2025-summary-report.pdf,47,C1b
+2025,NET Streaming services,Outside capital city,70,Past 7 days,television-media-survey-2025-summary-report.pdf,47,C1b
+2025,NET YouTube / YouTube Premium,Capital city,82,Past 7 days,television-media-survey-2025-summary-report.pdf,48,C1c
+2025,NET YouTube / YouTube Premium,Outside capital city,66,Past 7 days,television-media-survey-2025-summary-report.pdf,48,C1c
+2025,NET Social media video,Capital city,83,Past 7 days,television-media-survey-2025-summary-report.pdf,51,C1e
+2025,NET Social media video,Outside capital city,72,Past 7 days,television-media-survey-2025-summary-report.pdf,51,C1e
+2025,NET Broadcast channels including on-demand,Capital city,72,Past 7 days,television-media-survey-2025-summary-report.pdf,45,C1a
+2025,NET Broadcast channels including on-demand,Outside capital city,85,Past 7 days,television-media-survey-2025-summary-report.pdf,45,C1a
+2025,NET AM/FM radio,Capital city,48,Past 7 days,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,NET AM/FM radio,Outside capital city,61,Past 7 days,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,NET Online audio,Capital city,72,Past 7 days,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,NET Online audio,Outside capital city,57,Past 7 days,television-media-survey-2025-summary-report.pdf,180,NEW28

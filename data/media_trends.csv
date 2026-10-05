@@ -1,0 +1,95 @@
+year,domain,media_type,percentage,is_net,recall_period,population,sample_n,source_report,source_pdf_page,question
+2020,Screen content,Online subscription services,60,0,Past 7 days,All adult respondents,4096,television-media-survey-2025-summary-report.pdf,41,C1
+2021,Screen content,Online subscription services,62,0,Past 7 days,All adult respondents,4135,television-media-survey-2025-summary-report.pdf,41,C1
+2022,Screen content,Online subscription services,66,0,Past 7 days,All adult respondents,5017,television-media-survey-2025-summary-report.pdf,41,C1
+2023,Screen content,Online subscription services,65,0,Past 7 days,All adult respondents,4892,television-media-survey-2025-summary-report.pdf,41,C1
+2024,Screen content,Online subscription services,63,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,41,C1
+2025,Screen content,Online subscription services,65,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,41,C1
+2020,Screen content,Free video streaming services,54,0,Past 7 days,All adult respondents,4096,television-media-survey-2025-summary-report.pdf,41,C1
+2021,Screen content,Free video streaming services,56,0,Past 7 days,All adult respondents,4135,television-media-survey-2025-summary-report.pdf,41,C1
+2022,Screen content,Free video streaming services,58,0,Past 7 days,All adult respondents,5017,television-media-survey-2025-summary-report.pdf,41,C1
+2023,Screen content,Free video streaming services,61,0,Past 7 days,All adult respondents,4892,television-media-survey-2025-summary-report.pdf,41,C1
+2024,Screen content,Free video streaming services,58,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,41,C1
+2025,Screen content,Free video streaming services,60,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,41,C1
+2020,Screen content,Other websites or apps,38,0,Past 7 days,All adult respondents,4096,television-media-survey-2025-summary-report.pdf,41,C1
+2021,Screen content,Other websites or apps,39,0,Past 7 days,All adult respondents,4135,television-media-survey-2025-summary-report.pdf,41,C1
+2022,Screen content,Other websites or apps,49,0,Past 7 days,All adult respondents,5017,television-media-survey-2025-summary-report.pdf,41,C1
+2023,Screen content,Other websites or apps,49,0,Past 7 days,All adult respondents,4892,television-media-survey-2025-summary-report.pdf,41,C1
+2024,Screen content,Other websites or apps,48,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,41,C1
+2025,Screen content,Other websites or apps,49,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,41,C1
+2020,Screen content,Commercial free-to-air TV excluding on-demand,61,0,Past 7 days,All adult respondents,4096,television-media-survey-2025-summary-report.pdf,41,C1
+2021,Screen content,Commercial free-to-air TV excluding on-demand,58,0,Past 7 days,All adult respondents,4135,television-media-survey-2025-summary-report.pdf,41,C1
+2022,Screen content,Commercial free-to-air TV excluding on-demand,53,0,Past 7 days,All adult respondents,5017,television-media-survey-2025-summary-report.pdf,41,C1
+2023,Screen content,Commercial free-to-air TV excluding on-demand,51,0,Past 7 days,All adult respondents,4892,television-media-survey-2025-summary-report.pdf,41,C1
+2024,Screen content,Commercial free-to-air TV excluding on-demand,48,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,41,C1
+2025,Screen content,Commercial free-to-air TV excluding on-demand,49,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,41,C1
+2020,Screen content,Public free-to-air TV excluding on-demand,53,0,Past 7 days,All adult respondents,4096,television-media-survey-2025-summary-report.pdf,41,C1
+2021,Screen content,Public free-to-air TV excluding on-demand,50,0,Past 7 days,All adult respondents,4135,television-media-survey-2025-summary-report.pdf,41,C1
+2022,Screen content,Public free-to-air TV excluding on-demand,41,0,Past 7 days,All adult respondents,5017,television-media-survey-2025-summary-report.pdf,41,C1
+2023,Screen content,Public free-to-air TV excluding on-demand,40,0,Past 7 days,All adult respondents,4892,television-media-survey-2025-summary-report.pdf,41,C1
+2024,Screen content,Public free-to-air TV excluding on-demand,37,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,41,C1
+2025,Screen content,Public free-to-air TV excluding on-demand,37,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,41,C1
+2022,Screen content,Public free-to-air on-demand TV,34,0,Past 7 days,All adult respondents,5017,television-media-survey-2025-summary-report.pdf,41,C1
+2023,Screen content,Public free-to-air on-demand TV,34,0,Past 7 days,All adult respondents,4892,television-media-survey-2025-summary-report.pdf,41,C1
+2024,Screen content,Public free-to-air on-demand TV,33,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,41,C1
+2025,Screen content,Public free-to-air on-demand TV,34,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,41,C1
+2022,Screen content,Commercial free-to-air on-demand TV,29,0,Past 7 days,All adult respondents,5017,television-media-survey-2025-summary-report.pdf,41,C1
+2023,Screen content,Commercial free-to-air on-demand TV,31,0,Past 7 days,All adult respondents,4892,television-media-survey-2025-summary-report.pdf,41,C1
+2024,Screen content,Commercial free-to-air on-demand TV,31,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,41,C1
+2025,Screen content,Commercial free-to-air on-demand TV,33,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,41,C1
+2020,Screen content,Sports specific website or app,15,0,Past 7 days,All adult respondents,4096,television-media-survey-2025-summary-report.pdf,41,C1
+2021,Screen content,Sports specific website or app,16,0,Past 7 days,All adult respondents,4135,television-media-survey-2025-summary-report.pdf,41,C1
+2022,Screen content,Sports specific website or app,17,0,Past 7 days,All adult respondents,5017,television-media-survey-2025-summary-report.pdf,41,C1
+2023,Screen content,Sports specific website or app,17,0,Past 7 days,All adult respondents,4892,television-media-survey-2025-summary-report.pdf,41,C1
+2024,Screen content,Sports specific website or app,14,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,41,C1
+2025,Screen content,Sports specific website or app,18,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,41,C1
+2020,Screen content,Pay TV,24,0,Past 7 days,All adult respondents,4096,television-media-survey-2025-summary-report.pdf,42,C1
+2021,Screen content,Pay TV,22,0,Past 7 days,All adult respondents,4135,television-media-survey-2025-summary-report.pdf,42,C1
+2022,Screen content,Pay TV,21,0,Past 7 days,All adult respondents,5017,television-media-survey-2025-summary-report.pdf,42,C1
+2023,Screen content,Pay TV,16,0,Past 7 days,All adult respondents,4892,television-media-survey-2025-summary-report.pdf,42,C1
+2024,Screen content,Pay TV,16,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,42,C1
+2025,Screen content,Pay TV,17,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,42,C1
+2020,Screen content,NET Online screen content,81,1,Past 7 days,All adult respondents,4096,television-media-survey-2025-summary-report.pdf,42,C1
+2021,Screen content,NET Online screen content,83,1,Past 7 days,All adult respondents,4135,television-media-survey-2025-summary-report.pdf,42,C1
+2022,Screen content,NET Online screen content,87,1,Past 7 days,All adult respondents,5017,television-media-survey-2025-summary-report.pdf,42,C1
+2023,Screen content,NET Online screen content,88,1,Past 7 days,All adult respondents,4892,television-media-survey-2025-summary-report.pdf,42,C1
+2024,Screen content,NET Online screen content,87,1,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,42,C1
+2025,Screen content,NET Online screen content,88,1,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,42,C1
+2020,Screen content,NET Free-to-air TV,80,1,Past 7 days,All adult respondents,4096,television-media-survey-2025-summary-report.pdf,42,C1
+2021,Screen content,NET Free-to-air TV,77,1,Past 7 days,All adult respondents,4135,television-media-survey-2025-summary-report.pdf,42,C1
+2022,Screen content,NET Free-to-air TV,75,1,Past 7 days,All adult respondents,5017,television-media-survey-2025-summary-report.pdf,42,C1
+2023,Screen content,NET Free-to-air TV,73,1,Past 7 days,All adult respondents,4892,television-media-survey-2025-summary-report.pdf,42,C1
+2024,Screen content,NET Free-to-air TV,70,1,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,42,C1
+2025,Screen content,NET Free-to-air TV,71,1,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,42,C1
+2022,Audio,Online music streaming services,51,0,Past 7 days,All adult respondents,4002,television-media-survey-2025-summary-report.pdf,180,NEW28
+2023,Audio,Online music streaming services,55,0,Past 7 days,All adult respondents,3730,television-media-survey-2025-summary-report.pdf,180,NEW28
+2024,Audio,Online music streaming services,47,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,Audio,Online music streaming services,51,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,180,NEW28
+2022,Audio,FM radio,57,0,Past 7 days,All adult respondents,4002,television-media-survey-2025-summary-report.pdf,180,NEW28
+2023,Audio,FM radio,57,0,Past 7 days,All adult respondents,3730,television-media-survey-2025-summary-report.pdf,180,NEW28
+2024,Audio,FM radio,51,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,Audio,FM radio,49,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,180,NEW28
+2022,Audio,Podcasts,24,0,Past 7 days,All adult respondents,4002,television-media-survey-2025-summary-report.pdf,180,NEW28
+2023,Audio,Podcasts,25,0,Past 7 days,All adult respondents,3730,television-media-survey-2025-summary-report.pdf,180,NEW28
+2024,Audio,Podcasts,23,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,Audio,Podcasts,23,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,180,NEW28
+2022,Audio,AM radio,21,0,Past 7 days,All adult respondents,4002,television-media-survey-2025-summary-report.pdf,180,NEW28
+2023,Audio,AM radio,22,0,Past 7 days,All adult respondents,3730,television-media-survey-2025-summary-report.pdf,180,NEW28
+2024,Audio,AM radio,17,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,Audio,AM radio,16,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,180,NEW28
+2022,Audio,Radio via internet or app excluding podcasts,14,0,Past 7 days,All adult respondents,4002,television-media-survey-2025-summary-report.pdf,180,NEW28
+2023,Audio,Radio via internet or app excluding podcasts,15,0,Past 7 days,All adult respondents,3730,television-media-survey-2025-summary-report.pdf,180,NEW28
+2024,Audio,Radio via internet or app excluding podcasts,12,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,Audio,Radio via internet or app excluding podcasts,12,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,180,NEW28
+2022,Audio,Digital radio DAB,14,0,Past 7 days,All adult respondents,4002,television-media-survey-2025-summary-report.pdf,180,NEW28
+2023,Audio,Digital radio DAB,14,0,Past 7 days,All adult respondents,3730,television-media-survey-2025-summary-report.pdf,180,NEW28
+2024,Audio,Digital radio DAB,11,0,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,Audio,Digital radio DAB,9,0,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,180,NEW28
+2022,Audio,NET AM/FM radio,64,1,Past 7 days,All adult respondents,4002,television-media-survey-2025-summary-report.pdf,180,NEW28
+2023,Audio,NET AM/FM radio,64,1,Past 7 days,All adult respondents,3730,television-media-survey-2025-summary-report.pdf,180,NEW28
+2024,Audio,NET AM/FM radio,57,1,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,Audio,NET AM/FM radio,54,1,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,180,NEW28
+2022,Audio,NET Online audio,67,1,Past 7 days,All adult respondents,4002,television-media-survey-2025-summary-report.pdf,180,NEW28
+2023,Audio,NET Online audio,71,1,Past 7 days,All adult respondents,3730,television-media-survey-2025-summary-report.pdf,180,NEW28
+2024,Audio,NET Online audio,61,1,Past 7 days,All adult respondents,4490,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,Audio,NET Online audio,65,1,Past 7 days,All adult respondents,4396,television-media-survey-2025-summary-report.pdf,180,NEW28

@@ -1,0 +1,68 @@
+year,metric,media_type,age_group,age_min,age_max,age_order,age_scheme,percentage,recall_period,source_report,source_pdf_page,question
+2023,Watched screen content,Online subscription services,18-24,18,24,1,Seven adult age bands,78,Past 7 days,the-2023-television-and-media-survey-summary-report-july2024.pdf,20,C1
+2023,Watched screen content,Online subscription services,25-34,25,34,2,Seven adult age bands,80,Past 7 days,the-2023-television-and-media-survey-summary-report-july2024.pdf,20,C1
+2023,Watched screen content,Online subscription services,35-44,35,44,3,Seven adult age bands,75,Past 7 days,the-2023-television-and-media-survey-summary-report-july2024.pdf,20,C1
+2023,Watched screen content,Online subscription services,45-54,45,54,4,Seven adult age bands,65,Past 7 days,the-2023-television-and-media-survey-summary-report-july2024.pdf,20,C1
+2023,Watched screen content,Online subscription services,55-64,55,64,5,Seven adult age bands,60,Past 7 days,the-2023-television-and-media-survey-summary-report-july2024.pdf,20,C1
+2023,Watched screen content,Online subscription services,65-74,65,74,6,Seven adult age bands,48,Past 7 days,the-2023-television-and-media-survey-summary-report-july2024.pdf,20,C1
+2023,Watched screen content,Online subscription services,75+,75,,7,Seven adult age bands,35,Past 7 days,the-2023-television-and-media-survey-summary-report-july2024.pdf,20,C1
+2024,Watched screen content,Online subscription services,18-24,18,24,1,Seven adult age bands,73,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,Watched screen content,Online subscription services,25-34,25,34,2,Seven adult age bands,76,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,Watched screen content,Online subscription services,35-44,35,44,3,Seven adult age bands,66,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,Watched screen content,Online subscription services,45-54,45,54,4,Seven adult age bands,69,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,Watched screen content,Online subscription services,55-64,55,64,5,Seven adult age bands,59,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,Watched screen content,Online subscription services,65-74,65,74,6,Seven adult age bands,47,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2024,Watched screen content,Online subscription services,75+,75,,7,Seven adult age bands,33,Past 7 days,television-and-media-survey-2024-summary-report.pdf,28,C1
+2023,Currently accesses news,Commercial free-to-air TV,18-24,18,24,1,Seven adult age bands,39,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Commercial free-to-air TV,25-34,25,34,2,Seven adult age bands,45,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Commercial free-to-air TV,35-44,35,44,3,Seven adult age bands,53,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Commercial free-to-air TV,45-54,45,54,4,Seven adult age bands,65,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Commercial free-to-air TV,55-64,55,64,5,Seven adult age bands,66,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Commercial free-to-air TV,65-74,65,74,6,Seven adult age bands,69,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Commercial free-to-air TV,75+,75,,7,Seven adult age bands,75,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Radio,18-24,18,24,1,Seven adult age bands,27,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Radio,25-34,25,34,2,Seven adult age bands,39,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Radio,35-44,35,44,3,Seven adult age bands,50,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Radio,45-54,45,54,4,Seven adult age bands,58,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Radio,55-64,55,64,5,Seven adult age bands,62,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Radio,65-74,65,74,6,Seven adult age bands,59,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Radio,75+,75,,7,Seven adult age bands,65,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Social media,18-24,18,24,1,Seven adult age bands,74,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Social media,25-34,25,34,2,Seven adult age bands,70,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Social media,35-44,35,44,3,Seven adult age bands,51,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Social media,45-54,45,54,4,Seven adult age bands,38,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Social media,55-64,55,64,5,Seven adult age bands,26,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Social media,65-74,65,74,6,Seven adult age bands,27,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2023,Currently accesses news,Social media,75+,75,,7,Seven adult age bands,21,In general / current,the-2023-television-and-media-survey-summary-report-july2024.pdf,67,D2
+2024,Currently accesses news,Commercial free-to-air TV,18-24,18,24,1,Seven adult age bands,42,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Commercial free-to-air TV,25-34,25,34,2,Seven adult age bands,40,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Commercial free-to-air TV,35-44,35,44,3,Seven adult age bands,46,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Commercial free-to-air TV,45-54,45,54,4,Seven adult age bands,59,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Commercial free-to-air TV,55-64,55,64,5,Seven adult age bands,63,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Commercial free-to-air TV,65-74,65,74,6,Seven adult age bands,70,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Commercial free-to-air TV,75+,75,,7,Seven adult age bands,73,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Social media,18-24,18,24,1,Seven adult age bands,74,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Social media,25-34,25,34,2,Seven adult age bands,56,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Social media,35-44,35,44,3,Seven adult age bands,50,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Social media,45-54,45,54,4,Seven adult age bands,37,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Social media,55-64,55,64,5,Seven adult age bands,27,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Social media,65-74,65,74,6,Seven adult age bands,23,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2024,Currently accesses news,Social media,75+,75,,7,Seven adult age bands,28,In general / current,television-and-media-survey-2024-summary-report.pdf,85,D2
+2025,Currently accesses news,Social media,18-24,18,24,1,Five reported age bands,81,In general / current,television-media-survey-2025-summary-report.pdf,190,D2
+2025,Currently accesses news,Social media,25-34,25,34,2,Five reported age bands,68,In general / current,television-media-survey-2025-summary-report.pdf,190,D2
+2025,Currently accesses news,Social media,35-44,35,44,3,Five reported age bands,55,In general / current,television-media-survey-2025-summary-report.pdf,190,D2
+2025,Currently accesses news,Social media,45-54,45,54,4,Five reported age bands,48,In general / current,television-media-survey-2025-summary-report.pdf,190,D2
+2025,Currently accesses news,Social media,55+,55,,5,Five reported age bands,27,In general / current,television-media-survey-2025-summary-report.pdf,190,D2
+2025,Watched screen content,NET Streaming services,18-24,18,24,1,Three reported age bands,79,Past 7 days,television-media-survey-2025-summary-report.pdf,47,C1b
+2025,Watched screen content,NET Streaming services,25-44,25,44,2,Three reported age bands,87,Past 7 days,television-media-survey-2025-summary-report.pdf,47,C1b
+2025,Watched screen content,NET Streaming services,45+,45,,3,Three reported age bands,67,Past 7 days,television-media-survey-2025-summary-report.pdf,47,C1b
+2025,Watched screen content,NET YouTube / YouTube Premium,18-44,18,44,1,Two reported age bands 18-44 vs 45+,86,Past 7 days,television-media-survey-2025-summary-report.pdf,48,C1c
+2025,Watched screen content,NET YouTube / YouTube Premium,45+,45,,2,Two reported age bands 18-44 vs 45+,64,Past 7 days,television-media-survey-2025-summary-report.pdf,48,C1c
+2025,Watched screen content,NET Social media video,18-24,18,24,1,Two reported age bands 18-24 vs 25+,95,Past 7 days,television-media-survey-2025-summary-report.pdf,51,C1e
+2025,Watched screen content,NET Social media video,25+,25,,2,Two reported age bands 18-24 vs 25+,75,Past 7 days,television-media-survey-2025-summary-report.pdf,51,C1e
+2025,Watched screen content,NET Broadcast channels including on-demand,18-54,18,54,1,Two reported age bands 18-54 vs 55+,70,Past 7 days,television-media-survey-2025-summary-report.pdf,45,C1a
+2025,Watched screen content,NET Broadcast channels including on-demand,55+,55,,2,Two reported age bands 18-54 vs 55+,94,Past 7 days,television-media-survey-2025-summary-report.pdf,45,C1a
+2025,Listened to audio,NET AM/FM radio,18-54,18,54,1,Two reported age bands 18-54 vs 55+,45,Past 7 days,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,Listened to audio,NET AM/FM radio,55+,55,,2,Two reported age bands 18-54 vs 55+,71,Past 7 days,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,Listened to audio,NET Online audio,18-44,18,44,1,Two reported age bands 18-44 vs 45+,79,Past 7 days,television-media-survey-2025-summary-report.pdf,180,NEW28
+2025,Listened to audio,NET Online audio,45+,45,,2,Two reported age bands 18-44 vs 45+,52,Past 7 days,television-media-survey-2025-summary-report.pdf,180,NEW28
