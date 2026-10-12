@@ -211,7 +211,7 @@
         },
         {
           "data": {
-            "url": "data/social_platforms_2025.csv"
+            "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/social_platforms_2025.csv"
           },
           "transform": [
             {
