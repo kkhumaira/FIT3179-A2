@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Australian Media Consumption</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6" defer></script>
+  <script src="script.js" defer></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="page-width">
+    <h1>
+    <span class="title-highlight">Australia's Media Consumption:</span>
+    </h1>
+
+      <p class="introduction">
+        Exploring how different generations stream, scroll and tune in across Australia’s changing digital and traditional media landscape.
+      </p>
+
+      <a href="#streaming" class="hero-link">
+        Start Exploring
+      </a>
+    </div>
+  </header>
+
+  <main class="page-width">
+
+    <!-- SHARED FILTER FOR CHARTS 2–4 -->
+    <section id="viewing" class="story-section">
+
+      <h2>1. The Evolution of Australia's Media Consumption.</h2>
+
+      <p class="section-introduction">
+        Compare media use across age groups, the gap between streaming
+        and broadcast TV, and average time spent watching.
+      </p>
+
+      <div class="filter-panel">
+        <div>
+          <label for="shared-year">Select survey year</label>
+          <p>This slider updates the three charts below.</p>
+        </div>
+
+        <div class="slider-control">
+          <input
+            id="shared-year"
+            type="range"
+            min="2022"
+            max="2025"
+            step="1"
+            value="2025"
+            disabled
+          >
+
+          <output id="year-value" for="shared-year">2025</output>
+        </div>
+      </div>
+
+      <p id="filter-status" role="status" aria-live="polite"></p>
+
+      <!-- CHART 2 -->
+      <article class="chart-card">
+        <div
+          id="chart2"
+          class="chart-container"
+          aria-label="Media use by age heatmap"
+        >
+          <p class="loading">Loading chart…</p>
+        </div>
+
+        <p class="chart-note">
+          Darker cells indicate higher use. People may use several media
+          types, so rows do not total 100%.
+        </p>
+      </article>
+
+      <!-- CHART 3 -->
+      <article class="chart-card">
+
+  <div class="chart3-layout">
+
+    <!-- LEFT COLUMN: CHART -->
+    <div
+      id="chart3"
+      class="chart-container"
+      aria-label="Streaming versus broadcast television comparison"
+    >
+      <p class="loading">Loading chart…</p>
+    </div>
+
+    <!-- RIGHT COLUMN: ANNOTATIONS -->
+    <div class="chart3-annotations">
+
+      <div class="annotation">
+        <h3>Streaming leads among younger Australians</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris efficitur scelerisque velit eget convallis. In hac habitasse platea dictumst.
+        </p>
+      </div>
+
+      <div class="annotation">
+        <h3>Viewing preferences shift with age</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris efficitur scelerisque velit eget convallis. In hac habitasse platea dictumst. 
+
+    </div>
+
+  </div>
+
+  <!-- SOURCE NOTE -->
+  <p class="chart-note">
+    The connecting line shows the gap in weekly use.
+    Respondents can use both streaming and broadcast TV.
+    Source: How we watch and listen to content data tables, QF4.
+  </p>
+
+</article>
+
+      <!-- CHART 4 -->
+      <article class="chart-card">
+
+        <div
+          id="chart4"
+          class="chart-container"
+          aria-label="Average weekly viewing hours"
+        >
+          <p class="loading">Loading chart…</p>
+        </div>
+
+        <p class="chart-note">
+          Average hours are per platform user, not per Australian.
+          Do not add these averages together.
+          Source: Television &amp; Media Survey summary reports, C2.
+          This is a different survey series from the workbook.
+        </p>
+      </article>
+    </section>
+
+        <!-- CHART 1 -->
+    <section id="streaming" class="story-section">
+
+      <h2>2. Streaming Across Generations.</h2>
+
+      <p class="section-introduction">
+        Drawing on survey responses from Australian adults, this section explores how <strong>paid subscription streaming</strong> use differs across generations and has changed from <strong> 2017 to 2025</strong>. The figures represent the percentage of each age group who reported using a paid streaming service in the previous seven days.
+        <br> 
+        <h4>
+        <strong>Click the years below the bump chart to look further into the year.</strong> </h4>
+        <article class="chart-card">
+        <div
+          id="chart1"
+          class="chart-container"
+          aria-label="Streaming rankings and selected-year comparison"
+        >
+          <p class="loading">Loading chart…</p>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- CHART 5 -->
+    <section id="social" class="story-section">
+
+      <h2>3. Australia's Social Media Landscape.</h2>
+
+      <article class="chart-card">
+        <div
+          id="chart5"
+          class="chart-container"
+          aria-label="Social platform account ownership and use"
+        >
+          <p class="loading">Loading chart…</p>
+        </div>
+      </article>
+    </section>
+
+    
+
+    <!-- DATA NOTES -->
+    <section class="sources">
+      <h2>About the data</h2>
+
+      <p>
+        These charts use published survey aggregates. Media categories
+        can overlap, and questions and respondent bases differ between
+        sources. The shared slider aligns survey years; it does not
+        combine the surveys.
+      </p>
+
+      <ul>
+        <li>
+          How we watch and listen to content data tables:
+          viewing by age, QF4.
+        </li>
+
+        <li>
+          Television &amp; Media Survey 2025 summary report:
+          historical viewing hours, C2, and social-platform measures,
+          SOCIAL1 and SOCIAL2.
+        </li>
+      </ul>
+
+      <p class="chart-note">
+        Add full references, verified source links and your author
+        details before submitting.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="page-width">
+    Australian Media Consumption · FIT3179 Data Visualisation 2
+  </footer>
+</body>
+</html>

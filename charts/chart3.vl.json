@@ -1,0 +1,204 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Streaming and broadcast usage across age groups",
+    "subtitle": "Percentage of Australians using each television format in the past seven days",
+    "anchor": "start"
+  },
+  "width": 720,
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/workbook_viewing_by_age.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "percentage": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2025,
+      "bind": {
+        "input": "range",
+        "min": 2022,
+        "max": 2025,
+        "step": 1,
+        "name": "Survey year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.year == selectedYear"
+    },
+    {
+      "filter": "datum.media_type == 'Online subscription services' || datum.media_type == 'Free-to-air TV excluding catch-up'"
+    },
+    {
+      "calculate": "datum.media_type == 'Online subscription services' ? 'Paid streaming' : 'Broadcast TV'",
+      "as": "media_label"
+    },
+    {
+      "pivot": "media_label",
+      "value": "percentage",
+      "groupby": ["year", "age_group"]
+    },
+    {
+      "calculate": "datum['Paid streaming'] - datum['Broadcast TV']",
+      "as": "gap"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "age_group",
+      "type": "ordinal",
+      "sort": [
+        "18-24",
+        "25-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65-74",
+        "75+"
+      ],
+      "title": "Age group"
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#C5CBD3",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "Paid streaming",
+          "type": "quantitative",
+          "scale": {"domain": [0, 100]},
+          "title": "Used in the past seven days (%)"
+        },
+        "x2": {
+          "field": "Broadcast TV"
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Survey year"
+          },
+          {
+            "field": "age_group",
+            "type": "ordinal",
+            "title": "Age group"
+          },
+          {
+            "field": "Paid streaming",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Paid streaming (%)"
+          },
+          {
+            "field": "Broadcast TV",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Broadcast TV (%)"
+          },
+          {
+            "field": "gap",
+            "type": "quantitative",
+            "format": "+.1f",
+            "title": "Streaming minus TV (percentage points)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "fold": ["Paid streaming", "Broadcast TV"],
+          "as": ["media", "usage"]
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 150,
+        "opacity": 1,
+        "stroke": "none",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "usage",
+          "type": "quantitative",
+          "scale": {"domain": [0, 100]},
+          "title": "Used in the past seven days (%)"
+        },
+        "color": {
+          "field": "media",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Paid streaming", "Broadcast TV"],
+            "range": ["#CC79A7", "#E69F00"]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom-left"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Survey year"
+          },
+          {
+            "field": "age_group",
+            "type": "ordinal",
+            "title": "Age group"
+          },
+          {
+            "field": "media",
+            "type": "nominal",
+            "title": "Media type"
+          },
+          {
+            "field": "usage",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Usage (%)"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "background": "none",
+    "font": "Inter",
+    "view": {"stroke": null},
+    "title": {
+      "fontSize": 20,
+      "subtitleFontSize": 12,
+      "subtitlePadding": 8,
+      "color": "#253248"
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titlePadding": 12,
+      "gridColor": "#9c8d71",
+      "domain": false,
+      "ticks": false
+    },
+    "axisY": {
+      "grid": false
+    },
+    "legend": {
+      "labelFontSize": 12
+    }
+  }
+}

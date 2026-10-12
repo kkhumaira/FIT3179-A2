@@ -1,0 +1,177 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Media use across age groups",
+    "subtitle": "Percentage of each age group using each media type in the past seven days.",
+    "anchor": "start"
+  },
+  "width": "container",
+  "autosize": {
+  "type": "fit-x",
+  "contains": "padding"
+  },
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/workbook_viewing_by_age.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "percentage": "number"
+      }
+    }
+  },
+  "params": [
+  {
+    "name": "selectedYear",
+    "value": 2025,
+    "bind": {
+      "input": "range",
+      "min": 2022,
+      "max": 2025,
+      "step": 1,
+      "name": "Survey year: "
+    }
+  }
+    ],
+  "transform": [
+    {
+      "filter": "datum.year == selectedYear"
+    },
+    {
+      "filter": "indexof(['Online subscription services', 'User-generated or short-form online video', 'Free-to-air TV excluding catch-up', 'Free-to-air catch-up and streaming', 'Pay TV'], datum.media_type) >= 0"
+    },
+    {
+      "calculate": "datum.media_type == 'Online subscription services' ? 'Paid streaming' : datum.media_type == 'User-generated or short-form online video' ? 'Online / short-form video' : datum.media_type == 'Free-to-air TV excluding catch-up' ? 'Broadcast TV' : datum.media_type == 'Free-to-air catch-up and streaming' ? 'Catch-up TV' : 'Pay TV'",
+      "as": "media_label"
+    },
+    {
+      "calculate": "format(datum.percentage, '.0f') + '%'",
+      "as": "percentage_label"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "media_label",
+      "type": "ordinal",
+      "sort": [
+        "Paid streaming",
+        "Online / short-form video",
+        "Broadcast TV",
+        "Catch-up TV",
+        "Pay TV"
+      ],
+      "axis": {
+        "labelAngle": 0,
+        "labelLimit": 180,
+        "labelFontSize": 11,
+        "title": null
+      }
+    },
+    "y": {
+      "field": "age_group",
+      "type": "ordinal",
+      "sort": [
+        "18-24",
+        "25-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65-74",
+        "75+"
+      ],
+      "title": "Age group"
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#9c8d71",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "color": {
+          "field": "percentage",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 100],
+            "range": ["#F4E6CC", "#007E5D"]
+          },
+          "legend": {
+            "title": "Usage (%)"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Survey year"
+          },
+          {
+            "field": "age_group",
+            "type": "ordinal",
+            "title": "Age group"
+          },
+          {
+            "field": "media_type",
+            "type": "nominal",
+            "title": "Media type"
+          },
+          {
+            "field": "percentage",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Usage (%)"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "percentage_label"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.percentage >= 60",
+            "value": "#FFFFFF"
+          },
+          "value": "#253248"
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "none",
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+
+    "title": {
+      "fontSize": 20,
+      "subtitleFontSize": 12,
+      "subtitlePadding": 8,
+      "color": "#253248"
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titlePadding": 12,
+      "domain": false,
+      "ticks": false,
+      "grid": false,
+      "labelPadding": 12
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}

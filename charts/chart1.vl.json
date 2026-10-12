@@ -1,0 +1,398 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/workbook_viewing_by_age.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "percentage": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.media_type == 'Online subscription services'"
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "streaming_rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "percentage",
+          "order": "descending"
+        }
+      ],
+      "groupby": ["year"]
+    }
+  ],
+  "hconcat": [
+    {
+      "vconcat": [
+        {
+          "title": {
+            "text": "Age-group ranking over time",
+            "subtitle": "Rank 1 = highest streaming use",
+            "anchor": "start"
+          },
+          "width": 500,
+          "height": 320,
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {
+                "domain": [2017, 2025],
+                "nice": false
+              },
+              "axis": {
+                "labels": false,
+                "ticks": false,
+                "grid": false,
+                "title": null
+              }
+            }
+          },
+          "layer": [
+            {
+              "transform": [
+                {
+                  "filter": {
+                    "param": "chosenYear",
+                    "empty": false
+                  }
+                },
+                {
+                  "aggregate": [
+                    {
+                      "op": "count",
+                      "as": "records"
+                    }
+                  ],
+                  "groupby": ["year"]
+                }
+              ],
+              "mark": {
+                "type": "rule",
+                "color": "#999999",
+                "strokeDash": [5, 5],
+                "strokeWidth": 1.5
+              }
+            },
+            {
+              "mark": {
+                "type": "line",
+                "strokeWidth": 2.5,
+                "point": {
+                  "filled": true,
+                  "size": 70
+                }
+              },
+              "encoding": {
+                "y": {
+                  "field": "streaming_rank",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [1, 7],
+                    "reverse": true,
+                    "nice": false
+                  },
+                  "axis": {
+                    "values": [1, 2, 3, 4, 5, 6, 7],
+                    "format": "d"
+                  },
+                  "title": "Rank by streaming use"
+                },
+                "color": {
+                  "field": "age_group",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "18-24",
+                      "25-34",
+                      "35-44",
+                      "45-54",
+                      "55-64",
+                      "65-74",
+                      "75+"
+                    ],
+                    "range": [
+                      "#0072B2",
+                      "#E69F00",
+                      "#009E73",
+                      "#CC79A7",
+                      "#D55E00",
+                      "#56B4E9",
+                      "#666666"
+                    ]
+                  },
+                  "legend": {
+                    "title": "Age group",
+                    "orient": "right",
+                    "direction": "vertical",
+                    "offset": 15,
+                    "anchor": "middle"
+                  }
+                },
+                "tooltip": [
+                  {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "Survey year"
+                  },
+                  {
+                    "field": "age_group",
+                    "type": "ordinal",
+                    "title": "Age group"
+                  },
+                  {
+                    "field": "streaming_rank",
+                    "type": "quantitative",
+                    "title": "Rank"
+                  },
+                  {
+                    "field": "percentage",
+                    "type": "quantitative",
+                    "format": ".1f",
+                    "title": "Usage (%)"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "width": 500,
+          "height": 30,
+          "transform": [
+            {
+              "aggregate": [
+                {
+                  "op": "count",
+                  "as": "records"
+                }
+              ],
+              "groupby": ["year"]
+            }
+          ],
+          "params": [
+            {
+              "name": "chosenYear",
+              "select": {
+                "type": "point",
+                "fields": ["year"],
+                "on": "click[event.item && event.item.datum && isValid(event.item.datum.year)]",
+                "clear": false,
+                "toggle": false
+              },
+              "value": [
+                {
+                  "year": 2025
+                }
+              ]
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {
+                "domain": [2017, 2025],
+                "nice": false
+              },
+              "axis": null
+            },
+            "y": {
+              "value": 15
+            },
+            "text": {
+              "field": "year",
+              "type": "quantitative",
+              "format": "d"
+            },
+            "color": {
+              "condition": {
+                "param": "chosenYear",
+                "value": "#0072B2"
+              },
+              "value": "#777777"
+            },
+            "tooltip": [
+              {
+                "field": "year",
+                "type": "ordinal",
+                "title": "Click to select year"
+              }
+            ]
+          }
+        }
+      ],
+      "spacing": 15,
+      "resolve": {
+        "scale": {
+          "x": "shared",
+          "y": "independent"
+        }
+      }
+    },
+    {
+      "title": {
+        "text": {
+          "expr": "chosenYear.year && length(chosenYear.year) > 0 ? 'Actual streaming use: ' + chosenYear.year[0] : 'Select a year'"
+        },
+        "subtitle": "Used in the past seven days",
+        "anchor": "start"
+      },
+      "width": 350,
+      "height": 320,
+      "transform": [
+        {
+          "filter": {
+            "param": "chosenYear",
+            "empty": false
+          }
+        },
+        {
+          "calculate": "format(datum.percentage, '.1f') + '%'",
+          "as": "percentage_label"
+        }
+      ],
+      "encoding": {
+        "y": {
+          "field": "age_group",
+          "type": "ordinal",
+          "sort": [
+            "18-24",
+            "25-34",
+            "35-44",
+            "45-54",
+            "55-64",
+            "65-74",
+            "75+"
+          ],
+          "title": "Age group"
+        },
+        "x": {
+          "field": "percentage",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 100]
+          },
+          "axis": {
+            "values": [0, 20, 40, 60, 80, 100]
+          },
+          "title": "Usage (%)"
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "cornerRadiusEnd": 4
+          },
+          "encoding": {
+            "color": {
+                  "field": "age_group",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "18-24",
+                      "25-34",
+                      "35-44",
+                      "45-54",
+                      "55-64",
+                      "65-74",
+                      "75+"
+                    ],
+                    "range": [
+                      "#0072B2",
+                      "#E69F00",
+                      "#009E73",
+                      "#CC79A7",
+                      "#D55E00",
+                      "#56B4E9",
+                      "#666666"
+                    ]
+                  },
+                  "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "year",
+                "type": "ordinal",
+                "title": "Survey year"
+              },
+              {
+                "field": "age_group",
+                "type": "ordinal",
+                "title": "Age group"
+              },
+              {
+                "field": "percentage",
+                "type": "quantitative",
+                "format": ".1f",
+                "title": "Usage (%)"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "dx": 6,
+            "color": "#253248",
+            "fontSize": 11
+          },
+          "encoding": {
+            "text": {
+              "field": "percentage_label"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "spacing": 35,
+  "resolve": {
+    "scale": {
+      "x": "independent",
+      "y": "independent",
+      "color": "independent"
+    }
+  },
+  "config": {
+    "background": "transparent",
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "fontSize": 20,
+      "subtitleFontSize": 12,
+      "subtitlePadding": 8,
+      "color": "#253248"
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titlePadding": 12,
+      "gridColor": "#E8E8E8"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}

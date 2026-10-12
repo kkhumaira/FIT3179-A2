@@ -1,0 +1,286 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "spacing": 20,
+  "hconcat": [
+    {
+      "vconcat": [
+        {
+          "width": 300,
+          "height": 48,
+          "data": {
+            "values": [
+              {
+                "title": "Social Media News Consumption by Age",
+                "subtitle": "Share accessing news through social media per age group, 2025"
+              }
+            ]
+          },
+          "layer": [
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "top",
+                "fontSize": 20,
+                "fontWeight": "bold",
+                "color": "#111111"
+              },
+              "encoding": {
+                "x": {"value": 0},
+                "y": {"value": 0},
+                "text": {"field": "title"}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "top",
+                "fontSize": 12,
+                "color": "#333333"
+              },
+              "encoding": {
+                "x": {"value": 0},
+                "y": {"value": 25},
+                "text": {"field": "subtitle"}
+              }
+            }
+          ]
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/media_by_age.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == 2025 && datum.metric == 'Currently accesses news' && datum.media_type == 'Social media'"
+            },
+            {
+              "calculate": "100 - datum.percentage",
+              "as": "remaining"
+            },
+            {
+              "fold": ["percentage", "remaining"],
+              "as": ["segment", "value"]
+            },
+            {
+              "calculate": "datum.segment == 'percentage' ? 'Accesses news' : 'Other respondents'",
+              "as": "status"
+            }
+          ],
+          "facet": {
+            "field": "age_group",
+            "type": "ordinal",
+            "sort": ["18-24", "25-34", "35-44", "45-54", "55+"],
+            "header": {
+              "title": null,
+              "labelFontSize": 12,
+              "labelFontWeight": "bold",
+              "labelPadding": 8
+            }
+          },
+          "columns": 3,
+          "spec": {
+            "width": 105,
+            "height": 105,
+            "layer": [
+              {
+                "mark": {
+                  "type": "arc",
+                  "innerRadius": 33,
+                  "outerRadius": 48
+                },
+                "encoding": {
+                  "theta": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "stack": true
+                  },
+                  "color": {
+                    "field": "status",
+                    "type": "nominal",
+                    "scale": {
+                      "domain": [
+                        "Accesses news",
+                        "Other respondents"
+                      ],
+                      "range": [
+                        "#009E73",
+                        "#EAEAEA"
+                      ]
+                    },
+                    "legend": null
+                  },
+                  "order": {
+                    "field": "segment",
+                    "type": "nominal",
+                    "sort": "descending"
+                  },
+                  "tooltip": [
+                    {
+                      "field": "age_group",
+                      "title": "Age group"
+                    },
+                    {
+                      "field": "status",
+                      "title": "Category"
+                    },
+                    {
+                      "field": "value",
+                      "title": "Percentage",
+                      "format": ".0f"
+                    }
+                  ]
+                }
+              },
+              {
+                "transform": [
+                  {
+                    "filter": "datum.segment == 'percentage'"
+                  },
+                  {
+                    "calculate": "format(datum.value, '.0f') + '%'",
+                    "as": "percentageLabel"
+                  }
+                ],
+                "mark": {
+                  "type": "text",
+                  "fontSize": 19,
+                  "fontWeight": "bold",
+                  "color": "#333333"
+                },
+                "encoding": {
+                  "text": {
+                    "field": "percentageLabel",
+                    "type": "nominal"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "spacing": 5
+    },
+    {
+      "vconcat": [
+        {
+          "width": 420,
+          "height": 48,
+          "data": {
+            "values": [
+              {
+                "title": "Where Australians Watch Social Videos",
+                "subtitle": "Watched a video on each platform in the past 7 days, 2025"
+              }
+            ]
+          },
+          "layer": [
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "top",
+                "fontSize": 20,
+                "fontWeight": "bold",
+                "color": "#111111"
+              },
+              "encoding": {
+                "x": {"value": 0},
+                "y": {"value": 0},
+                "text": {"field": "title"}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "top",
+                "fontSize": 12,
+                "color": "#333333"
+              },
+              "encoding": {
+                "x": {"value": 0},
+                "y": {"value": 25},
+                "text": {"field": "subtitle"}
+              }
+            }
+          ]
+        },
+        {
+          "data": {
+            "url": "data/social_platforms_2025.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == 2025 && datum.metric == 'Watched video on platform'"
+            }
+          ],
+          "width": 700,
+          "height": 300,
+          "mark": {
+            "type": "bar",
+            "color": "#0072B2",
+            "cornerRadiusEnd": 4,
+            "size": 14
+          },
+          "encoding": {
+            "y": {
+              "field": "platform",
+              "type": "nominal",
+              "sort": {
+                "field": "percentage",
+                "op": "max",
+                "order": "descending"
+              },
+              "axis": {
+                "title": null,
+                "labelFontSize": 11,
+                "labelPadding": 8,
+                "domain": false,
+                "ticks": false
+              }
+            },
+            "x": {
+              "field": "percentage",
+              "type": "quantitative",
+              "scale": {
+                "domain": [0, 70]
+              },
+              "axis": {
+                "title": "Australian adults (%)",
+                "grid": true,
+                "gridColor": "#EAEAEA"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "platform",
+                "title": "Platform"
+              },
+              {
+                "field": "percentage",
+                "title": "Watched video (%)",
+                "format": ".0f"
+              }
+            ]
+          }
+        }
+      ],
+      "spacing": 5
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Inter",
+    "axis": {
+      "labelColor": "#444444",
+      "titleColor": "#555555",
+      "titleFontSize": 12
+    }
+  }
+}

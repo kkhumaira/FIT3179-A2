@@ -1,0 +1,159 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Weekly viewing by media type",
+    "subtitle": "Average hours spent watching each media type per week among its users",
+    "anchor": "start"
+  },
+  "width": "container",
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding"
+  },
+  "height": 380,
+  "data": {
+    "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/viewing_hours.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "average_hours_per_week": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2025,
+      "bind": {
+        "input": "range",
+        "min": 2022,
+        "max": 2025,
+        "step": 1,
+        "name": "Survey year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.year == selectedYear"
+    },
+    {
+      "calculate": "datum.media_type == 'Online subscription services' ? 'Paid streaming' : datum.media_type == 'Free video streaming services' ? 'Free video streaming' : datum.media_type == 'Commercial free-to-air TV excluding on-demand' ? 'Commercial broadcast TV' : datum.media_type == 'Public free-to-air TV excluding on-demand' ? 'Public broadcast TV' : datum.media_type == 'Public free-to-air on-demand TV' ? 'Public on-demand TV' : datum.media_type == 'Commercial free-to-air on-demand TV' ? 'Commercial on-demand TV' : datum.media_type == 'Sports specific website or app' ? 'Sports websites / apps' : datum.media_type",
+      "as": "media_label"
+    },
+    {
+      "calculate": "format(datum.average_hours_per_week, '.1f') + ' h'",
+      "as": "hours_label"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "media_label",
+      "type": "ordinal",
+      "sort": [
+        "Paid streaming",
+        "Free video streaming",
+        "Other websites or apps",
+        "Commercial broadcast TV",
+        "Public broadcast TV",
+        "Public on-demand TV",
+        "Commercial on-demand TV",
+        "Sports websites / apps",
+        "Pay TV"
+      ],
+      "title": null
+    },
+    "x": {
+      "field": "average_hours_per_week",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 12]
+      },
+      "axis": {
+        "values": [0, 2, 4, 6, 8, 10, 12]
+      },
+      "title": "Average hours per week per user"
+    },
+    "tooltip": [
+      {
+        "field": "year",
+        "type": "ordinal",
+        "title": "Survey year"
+      },
+      {
+        "field": "media_type",
+        "type": "nominal",
+        "title": "Media type"
+      },
+      {
+        "field": "average_hours_per_week",
+        "type": "quantitative",
+        "format": ".1f",
+        "title": "Weekly hours per user"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 3,
+        "color": "#9c8d71"
+      },
+      "encoding": {
+        "x2": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 400,
+        "opacity": 1,
+        "color": "#56B4E9"
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 20,
+        "fontSize": 12,
+        "color": "#253248"
+      },
+      "encoding": {
+        "text": {
+          "field": "hours_label"
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "none",
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "fontSize": 20,
+      "subtitleFontSize": 12,
+      "subtitlePadding": 8,
+      "color": "#253248"
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titlePadding": 12,
+      "domain": false,
+      "ticks": false,
+      "gridColor": "#E8E8E8"
+    },
+    "axisY": {
+      "grid": false
+    }
+  }
+}
