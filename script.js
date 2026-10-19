@@ -23,6 +23,11 @@ const chartDefinitions = [
     id: "chart5",
     path: "charts/chart5.vl.json",
     linked: false
+  },
+  {
+    id: "chart6",
+    path: "charts/chart6.vl.json",
+    linked: false
   }
 ];
 

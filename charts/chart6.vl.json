@@ -1,0 +1,141 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": "container",
+  "height": 350,
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding"
+  },
+  "title": {
+    "text": "How Different Generations Stream Music",
+    "subtitle": [
+      "Free and paid music streaming by age group, 2022"
+    ],
+    "anchor": "start",
+    "offset": 20
+  },
+  "data": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/media_by_age.csv",
+  "transform": [
+    {
+      "calculate": "format(datum.percentage, '.1f') + '%'",
+      "as": "label"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "age_group",
+      "type": "ordinal",
+      "sort": [
+        "15–24",
+        "25–34",
+        "35–44",
+        "45–54",
+        "55–64",
+        "65+"
+      ],
+      "axis": {
+        "title": null,
+        "labelPadding": 12,
+        "domain": false,
+        "ticks": false
+      }
+    },
+    "yOffset": {
+      "field": "service",
+      "sort": ["Free streaming", "Paid streaming"]
+    },
+    "x": {
+      "field": "percentage",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 100],
+        "nice": false
+      },
+      "axis": {
+        "title": "People using the service (%)",
+        "values": [0, 20, 40, 60, 80, 100],
+        "labelPadding": 8,
+        "domain": false,
+        "ticks": false
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+      },
+      "encoding": {
+        "color": {
+          "field": "service",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Free streaming", "Paid streaming"],
+            "range": ["#009E73", "#0072B2"]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "direction": "horizontal"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "age_group",
+            "type": "ordinal",
+            "title": "Age group"
+          },
+          {
+            "field": "service",
+            "type": "nominal",
+            "title": "Service"
+          },
+          {
+            "field": "percentage",
+            "type": "quantitative",
+            "title": "People (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 5,
+        "fontSize": 11,
+        "color": "#253248"
+      },
+      "encoding": {
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "fontSize": 20,
+      "subtitleFontSize": 12,
+      "subtitlePadding": 8,
+      "color": "#253248"
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titlePadding": 12,
+      "gridColor": "#E8E8E8"
+    },
+    "legend": {
+      "labelFontSize": 12
+    }
+  }
+}
