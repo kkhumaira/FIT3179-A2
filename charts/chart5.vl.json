@@ -3,6 +3,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": null,
   "spacing": 20,
+
   "hconcat": [
     {
       "vconcat": [
@@ -99,18 +100,21 @@
                     "stack": true
                   },
                   "color": {
-                    "field": "status",
-                    "type": "nominal",
-                    "scale": {
-                      "domain": [
-                        "Accesses news",
-                        "Other respondents"
-                      ],
-                      "range": [
-                        "#009E73",
-                        "#EAEAEA"
-                      ]
+                    "condition": {
+                      "test": "datum.segment == 'percentage'",
+                      "field": "age_group",
+                      "type": "nominal",
+                      "scale": {
+                        "range": [
+                          "#0072B2",
+                          "#E69F00",
+                          "#009E73",
+                          "#CC79A7",
+                          "#D55E00"
+                        ]
+                      }
                     },
+                    "value": "#E5E7EB",
                     "legend": null
                   },
                   "order": {
@@ -222,7 +226,7 @@
           "height": 300,
           "mark": {
             "type": "bar",
-            "color": "#0072B2",
+            "color": "#007E5D",
             "cornerRadiusEnd": 4,
             "size": 14
           },
@@ -230,11 +234,7 @@
             "y": {
               "field": "platform",
               "type": "nominal",
-              "sort": {
-                "field": "percentage",
-                "op": "max",
-                "order": "descending"
-              },
+              "sort": "-x",
               "axis": {
                 "title": null,
                 "labelFontSize": 11,
