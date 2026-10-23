@@ -28,7 +28,13 @@ const chartDefinitions = [
     id: "chart6",
     path: "charts/chart6.vl.json",
     linked: false
+  },
+  {
+    id: "chart7",
+    path: "charts/chart7.vl.json",
+    linked: false
   }
+
 ];
 
 const linkedViews = [];

@@ -1,0 +1,128 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 650,
+  "height": 450,
+  "title": {
+    "text": "Music Streaming Across Australia",
+    "subtitle": [
+      "Share of people aged 15+ who streamed music, 2022",
+      "Hover over a state or territory to explore."
+    ],
+    "anchor": "start",
+    "offset": 20
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/alwaysblazing/Australia-State-TopoJson-MapChart/master/au-states-topo.json",
+    "format": {
+        "type": "topojson",
+        "feature": "austates"
+    }
+  } ,
+    "transform": [
+    {
+        "filter": "datum.id < 8"
+    },
+    {
+        "calculate": "['New South Wales', 'Victoria', 'Queensland', 'South Australia', 'Western Australia', 'Tasmania', 'Northern Territory', 'Australian Capital Territory'][datum.id]",
+        "as": "state"
+    },
+    {
+        "lookup": "state",
+        "from": {
+        "data": {
+            "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/music_streaming_by_state.csv",
+            "format": {
+            "type": "csv",
+            "parse": {
+                "percentage": "number"
+            }
+            }
+        },
+        "key": "state",
+        "fields": ["percentage"]
+        }
+    },
+    {
+        "calculate": "isValid(datum.percentage) ? format(datum.percentage, '.1f') + '%' : 'No data'",
+        "as": "usage_label"
+    }
+    ],
+    "projection": {
+  "type": "mercator"
+},
+"params": [
+  {
+    "name": "hoverState",
+    "select": {
+      "type": "point",
+      "fields": ["id"],
+      "on": "pointerover",
+      "clear": "pointerout"
+    }
+  }
+],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 1.5
+  },
+  "encoding": {
+    "color": {
+      "condition": {
+        "test": "!isValid(datum.percentage)",
+        "value": "#D9D9D9"
+      },
+      "field": "percentage",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 100],
+        "range": ["#E8F5EF", "#009E73"]
+      },
+      "legend": {
+        "title": "Streamed music (%)",
+        "orient": "bottom",
+        "direction": "horizontal",
+        "gradientLength": 250,
+        "values": [0, 20, 40, 60, 80, 100]
+      }
+    },
+    "strokeWidth": {
+      "condition": {
+        "param": "hoverState",
+        "empty": false,
+        "value": 3
+      },
+      "value": 1.5
+    },
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal",
+        "title": "State / territory"
+      },
+      {
+        "field": "usage_label",
+        "type": "nominal",
+        "title": "Streamed music"
+      }
+    ]
+  },
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "fontSize": 20,
+      "subtitleFontSize": 12,
+      "subtitlePadding": 8,
+      "color": "#253248"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titlePadding": 10
+    }
+  }
+}

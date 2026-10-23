@@ -15,8 +15,9 @@
     "anchor": "start",
     "offset": 20
   },
-  "data": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/media_by_age.csv",
-  "transform": [
+  "data": {
+    "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/music_streaming_by_age.csv"
+  },"transform": [
     {
       "calculate": "format(datum.percentage, '.1f') + '%'",
       "as": "label"
