@@ -1,0 +1,157 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 700,
+  "height": 460,
+  "title": {
+    "text": "Different Places, Different Screens",
+    "subtitle": [
+      "Capital-city and outside-capital-city viewing, 2025",
+      "Figures describe the two groups nationally, not individual cities."
+    ],
+    "anchor": "start",
+    "offset": 20
+  },
+  "params": [
+    {
+      "name": "selectedMedia",
+      "value": "Streaming services",
+      "bind": {
+        "input": "select",
+        "name": "Choose media: ",
+        "options": [
+          "Streaming services",
+          "Broadcast TV",
+          "YouTube",
+          "Social media video",
+          "Broadcast TV including on-demand",
+          "AM/FM radio",
+          "Online audio"
+        ]
+      }
+    }
+  ],
+  "data": {
+    "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/GCCSA/MapServer/0/query?where=gccsa_code_2021%20IN%20%28%271GSYD%27,%271RNSW%27,%272GMEL%27,%272RVIC%27,%273GBRI%27,%273RQLD%27,%274GADE%27,%274RSAU%27,%275GPER%27,%275RWAU%27,%276GHOB%27,%276RTAS%27,%277GDAR%27,%277RNTE%27,%278ACTE%27%29&outFields=gccsa_code_2021,gccsa_name_2021&outSR=4326&maxAllowableOffset=0.01&f=geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "indexof(datum.properties.gccsa_code_2021, 'G') == 1 || datum.properties.gccsa_code_2021 == '8ACTE' ? 'Capital city' : 'Outside capital city'",
+      "as": "location_group"
+    },
+    {
+      "lookup": "location_group",
+      "from": {
+        "data": {
+          "values": [
+            {
+              "location_group": "Capital city",
+              "streaming": 80,
+              "broadcast": 50,
+              "youtube": 82,
+              "social_video": 83,
+              "broadcast_combined": 72,
+              "radio": 48,
+              "online_audio": 72
+            },
+            {
+              "location_group": "Outside capital city",
+              "streaming": 70,
+              "broadcast": 67,
+              "youtube": 66,
+              "social_video": 72,
+              "broadcast_combined": 85,
+              "radio": 61,
+              "online_audio": 57
+            }
+          ]
+        },
+        "key": "location_group",
+        "fields": [
+          "streaming",
+          "broadcast",
+          "youtube",
+          "social_video",
+          "broadcast_combined",
+          "radio",
+          "online_audio"
+        ]
+      }
+    },
+    {
+      "calculate": "selectedMedia == 'Streaming services' ? datum.streaming : selectedMedia == 'Broadcast TV' ? datum.broadcast : selectedMedia == 'YouTube' ? datum.youtube : selectedMedia == 'Social media video' ? datum.social_video : selectedMedia == 'Broadcast TV including on-demand' ? datum.broadcast_combined : selectedMedia == 'AM/FM radio' ? datum.radio : datum.online_audio",
+      "as": "percentage"
+    },
+    {
+      "calculate": "selectedMedia",
+      "as": "media_label"
+    },
+    {
+      "calculate": "format(datum.percentage, '.0f') + '%'",
+      "as": "percentage_label"
+    }
+  ],
+  "projection": {
+    "type": "equalEarth"
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 0.8
+  },
+  "encoding": {
+    "color": {
+      "field": "percentage",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 100],
+        "range": ["#E8F5EF", "#006D50"]
+      },
+      "legend": {
+        "title": "Reported use (%)",
+        "orient": "bottom",
+        "direction": "horizontal",
+        "gradientLength": 250,
+        "values": [0, 20, 40, 60, 80, 100]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "location_group",
+        "type": "nominal",
+        "title": "National survey group"
+      },
+      {
+        "field": "media_label",
+        "type": "nominal",
+        "title": "Media"
+      },
+      {
+        "field": "percentage_label",
+        "type": "nominal",
+        "title": "Reported use"
+      }
+    ]
+  },
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "fontSize": 20,
+      "subtitleFontSize": 12,
+      "subtitlePadding": 8,
+      "color": "#253248"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titlePadding": 10
+    }
+  }
+}
