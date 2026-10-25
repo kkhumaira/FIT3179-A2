@@ -1,157 +1,487 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "width": 700,
-  "height": 460,
   "title": {
     "text": "Different Places, Different Screens",
     "subtitle": [
-      "Capital-city and outside-capital-city viewing, 2025",
-      "Figures describe the two groups nationally, not individual cities."
+      "Click Metro or Regional to explore all media. Click a media type to compare both groups.",
+      "Map and bar clicks highlight a whole national group. All / All media reset the controls."
     ],
     "anchor": "start",
-    "offset": 20
+    "fontSize": 21
   },
   "params": [
     {
-      "name": "selectedMedia",
-      "value": "Streaming services",
-      "bind": {
-        "input": "select",
-        "name": "Choose media: ",
-        "options": [
-          "Streaming services",
-          "Broadcast TV",
-          "YouTube",
-          "Social media video",
-          "Broadcast TV including on-demand",
-          "AM/FM radio",
-          "Online audio"
-        ]
-      }
-    }
-  ],
-  "data": {
-  "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/australia_metro_regional.geojson",
-  "format": {
-    "type": "json",
-    "property": "features"
-  }
-  },
-  "transform": [
-    {
-      "calculate": "indexof(datum.properties.gccsa_code_2021, 'G') == 1 || datum.properties.gccsa_code_2021 == '8ACTE' ? 'Capital city' : 'Outside capital city'",
-      "as": "location_group"
+      "name": "chosenGroup",
+      "views": [
+        "groupButtons",
+        "mapView",
+        "barMarks"
+      ],
+      "select": {
+        "type": "point",
+        "fields": [
+          "location_group"
+        ],
+        "on": "click[event.item && event.item.datum && isValid(event.item.datum.location_group)]",
+        "toggle": false,
+        "clear": false
+      },
+      "value": [
+        {
+          "location_group": "All"
+        }
+      ]
     },
     {
-      "lookup": "location_group",
-      "from": {
-        "data": {
-          "values": [
+      "name": "chosenMedia",
+      "views": [
+        "mediaButtons"
+      ],
+      "select": {
+        "type": "point",
+        "fields": [
+          "media_type"
+        ],
+        "toggle": false,
+        "clear": false
+      },
+      "value": [
+        {
+          "media_type": "All media"
+        }
+      ]
+    }
+  ],
+  "vconcat": [
+    {
+      "name": "groupButtons",
+      "width": 400,
+      "height": 35,
+      "data": {
+        "values": [
+          {
+            "location_group": "All"
+          },
+          {
+            "location_group": "Metro"
+          },
+          {
+            "location_group": "Regional"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "x": {
+          "field": "location_group",
+          "type": "ordinal",
+          "sort": [
+            "All",
+            "Metro",
+            "Regional"
+          ],
+          "axis": null
+        },
+        "text": {
+          "field": "location_group"
+        },
+        "color": {
+          "condition": {
+            "param": "chosenGroup",
+            "empty": false,
+            "value": "#0072B2"
+          },
+          "value": "#666666"
+        }
+      }
+    },
+    {
+      "name": "mediaButtons",
+      "width": 1000,
+      "height": 35,
+      "data": {
+        "values": [
+          {
+            "media_type": "All media"
+          },
+          {
+            "media_type": "Broadcast TV"
+          },
+          {
+            "media_type": "Streaming services"
+          },
+          {
+            "media_type": "YouTube"
+          },
+          {
+            "media_type": "Social media video"
+          },
+          {
+            "media_type": "Broadcast TV + on-demand"
+          },
+          {
+            "media_type": "AM/FM radio"
+          },
+          {
+            "media_type": "Online audio"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "x": {
+          "field": "media_type",
+          "type": "ordinal",
+          "sort": [
+            "All media",
+            "Broadcast TV",
+            "Streaming services",
+            "YouTube",
+            "Social media video",
+            "Broadcast TV + on-demand",
+            "AM/FM radio",
+            "Online audio"
+          ],
+          "axis": null
+        },
+        "text": {
+          "field": "media_type"
+        },
+        "color": {
+          "condition": {
+            "param": "chosenMedia",
+            "empty": false,
+            "value": "#0072B2"
+          },
+          "value": "#666666"
+        }
+      }
+    },
+    {
+      "hconcat": [
+        {
+          "name": "mapView",
+          "width": 440,
+          "height": 340,
+          "data": {
+            "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/australia_metro_regional_fixed.geojson",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "transform": [
             {
-              "location_group": "Capital city",
-              "streaming": 80,
-              "broadcast": 50,
-              "youtube": 82,
-              "social_video": 83,
-              "broadcast_combined": 72,
-              "radio": 48,
-              "online_audio": 72
+              "calculate": "indexof(datum.properties.gccsa_code_2021, 'G') == 1 || datum.properties.gccsa_code_2021 == '8ACTE' ? 'Metro' : 'Regional'",
+              "as": "location_group"
+            }
+          ],
+          "projection": {
+            "type": "mercator"          },
+          "mark": {
+            "type": "geoshape",
+            "stroke": "white",
+            "strokeWidth": 0.7,
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "color": {
+              "field": "location_group",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Metro",
+                  "Regional"
+                ],
+                "range": [
+                  "#E69F00",
+                  "#0072B2"
+                ]
+              },
+              "legend": {
+                "title": null,
+                "orient": "bottom"
+              }
+            },
+            "opacity": {
+              "condition": {
+                "test": "!chosenGroup.location_group || chosenGroup.location_group[0] == 'All' || datum.location_group == chosenGroup.location_group[0]",
+                "value": 1
+              },
+              "value": 0.25
+            },
+            "tooltip": [
+              {
+                "field": "location_group",
+                "title": "National group"
+              }
+            ]
+          }
+        },
+        {
+          "width": 380,
+          "height": 340,
+          "title": {
+            "text": {
+              "expr": "chosenMedia.media_type && chosenMedia.media_type[0] != 'All media' ? chosenMedia.media_type[0] + ': Metro vs Regional' : (chosenGroup.location_group && chosenGroup.location_group[0] != 'All' ? chosenGroup.location_group[0] + ': all media' : 'Media use: Metro vs Regional')"
+            },
+            "fontSize": 15,
+            "anchor": "start"
+          },
+          "data": {
+            "values": [
+              {
+                "year": 2024,
+                "media_type": "Broadcast TV",
+                "location_group": "Metro",
+                "percentage": 51.0
+              },
+              {
+                "year": 2024,
+                "media_type": "Broadcast TV",
+                "location_group": "Regional",
+                "percentage": 66.0
+              },
+              {
+                "year": 2025,
+                "media_type": "Broadcast TV",
+                "location_group": "Metro",
+                "percentage": 50.0
+              },
+              {
+                "year": 2025,
+                "media_type": "Broadcast TV",
+                "location_group": "Regional",
+                "percentage": 67.0
+              },
+              {
+                "year": 2025,
+                "media_type": "Streaming services",
+                "location_group": "Metro",
+                "percentage": 80.0
+              },
+              {
+                "year": 2025,
+                "media_type": "Streaming services",
+                "location_group": "Regional",
+                "percentage": 70.0
+              },
+              {
+                "year": 2025,
+                "media_type": "YouTube",
+                "location_group": "Metro",
+                "percentage": 82.0
+              },
+              {
+                "year": 2025,
+                "media_type": "YouTube",
+                "location_group": "Regional",
+                "percentage": 66.0
+              },
+              {
+                "year": 2025,
+                "media_type": "Social media video",
+                "location_group": "Metro",
+                "percentage": 83.0
+              },
+              {
+                "year": 2025,
+                "media_type": "Social media video",
+                "location_group": "Regional",
+                "percentage": 72.0
+              },
+              {
+                "year": 2025,
+                "media_type": "Broadcast TV + on-demand",
+                "location_group": "Metro",
+                "percentage": 72.0
+              },
+              {
+                "year": 2025,
+                "media_type": "Broadcast TV + on-demand",
+                "location_group": "Regional",
+                "percentage": 85.0
+              },
+              {
+                "year": 2025,
+                "media_type": "AM/FM radio",
+                "location_group": "Metro",
+                "percentage": 48.0
+              },
+              {
+                "year": 2025,
+                "media_type": "AM/FM radio",
+                "location_group": "Regional",
+                "percentage": 61.0
+              },
+              {
+                "year": 2025,
+                "media_type": "Online audio",
+                "location_group": "Metro",
+                "percentage": 72.0
+              },
+              {
+                "year": 2025,
+                "media_type": "Online audio",
+                "location_group": "Regional",
+                "percentage": 57.0
+              }
+            ]
+          },
+          "transform": [
+            {
+              "filter": "datum.year == 2025"
             },
             {
-              "location_group": "Outside capital city",
-              "streaming": 70,
-              "broadcast": 67,
-              "youtube": 66,
-              "social_video": 72,
-              "broadcast_combined": 85,
-              "radio": 61,
-              "online_audio": 57
+              "filter": "(chosenMedia.media_type && chosenMedia.media_type[0] != 'All media') ? datum.media_type == chosenMedia.media_type[0] : (!(chosenGroup.location_group && chosenGroup.location_group[0] != 'All') || datum.location_group == chosenGroup.location_group[0])"
+            },
+            {
+              "calculate": "(chosenMedia.media_type && chosenMedia.media_type[0] != 'All media') ? datum.location_group : datum.media_type",
+              "as": "category"
+            },
+            {
+              "calculate": "format(datum.percentage,'.0f') + '%'",
+              "as": "label"
+            }
+          ],
+          "encoding": {
+            "y": {
+              "field": "category",
+              "type": "nominal",
+              "sort": [
+                "Broadcast TV",
+                "Streaming services",
+                "YouTube",
+                "Social media video",
+                "Broadcast TV + on-demand",
+                "AM/FM radio",
+                "Online audio"
+              ],
+              "axis": {
+                "title": null,
+                "labelLimit": 190
+              }
+            },
+            "yOffset": {
+              "field": "location_group",
+              "sort": [
+                "Metro",
+                "Regional"
+              ]
+            },
+            "x": {
+              "field": "percentage",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  100
+                ]
+              },
+              "axis": {
+                "title": "Reported use (%)"
+              }
+            },
+            "opacity": {
+              "condition": {
+                "test": "!chosenGroup.location_group || chosenGroup.location_group[0] == 'All' || datum.location_group == chosenGroup.location_group[0]",
+                "value": 1
+              },
+              "value": 0.25
+            }
+          },
+          "layer": [
+            {
+              "mark": {
+                "type": "bar",
+                "cursor": "pointer",
+                "cornerRadiusEnd": 3
+              },
+              "encoding": {
+                "color": {
+                  "field": "location_group",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "Metro",
+                      "Regional"
+                    ],
+                    "range": [
+                      "#E69F00",
+                      "#0072B2"
+                    ]
+                  },
+                  "legend": null
+                },
+                "tooltip": [
+                  {
+                    "field": "location_group",
+                    "title": "National group"
+                  },
+                  {
+                    "field": "media_type",
+                    "title": "Media"
+                  },
+                  {
+                    "field": "percentage",
+                    "title": "Reported use (%)"
+                  }
+                ]
+              },
+              "name": "barMarks"
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 4,
+                "fontSize": 11
+              },
+              "encoding": {
+                "text": {
+                  "field": "label"
+                }
+              }
             }
           ]
-        },
-        "key": "location_group",
-        "fields": [
-          "streaming",
-          "broadcast",
-          "youtube",
-          "social_video",
-          "broadcast_combined",
-          "radio",
-          "online_audio"
-        ]
-      }
-    },
-    {
-      "calculate": "selectedMedia == 'Streaming services' ? datum.streaming : selectedMedia == 'Broadcast TV' ? datum.broadcast : selectedMedia == 'YouTube' ? datum.youtube : selectedMedia == 'Social media video' ? datum.social_video : selectedMedia == 'Broadcast TV including on-demand' ? datum.broadcast_combined : selectedMedia == 'AM/FM radio' ? datum.radio : datum.online_audio",
-      "as": "percentage"
-    },
-    {
-      "calculate": "selectedMedia",
-      "as": "media_label"
-    },
-    {
-      "calculate": "format(datum.percentage, '.0f') + '%'",
-      "as": "percentage_label"
+        }
+      ],
+      "spacing": 30
     }
   ],
-  "projection": {
-    "type": "equalEarth"
-  },
-  "mark": {
-    "type": "geoshape",
-    "stroke": "#FFFFFF",
-    "strokeWidth": 0.8
-  },
-  "encoding": {
-    "color": {
-      "field": "percentage",
-      "type": "quantitative",
-      "scale": {
-        "domain": [0, 100],
-        "range": ["#E8F5EF", "#006D50"]
-      },
-      "legend": {
-        "title": "Reported use (%)",
-        "orient": "bottom",
-        "direction": "horizontal",
-        "gradientLength": 250,
-        "values": [0, 20, 40, 60, 80, 100]
-      }
-    },
-    "tooltip": [
-      {
-        "field": "location_group",
-        "type": "nominal",
-        "title": "National survey group"
-      },
-      {
-        "field": "media_label",
-        "type": "nominal",
-        "title": "Media"
-      },
-      {
-        "field": "percentage_label",
-        "type": "nominal",
-        "title": "Reported use"
-      }
-    ]
+  "spacing": 18,
+  "resolve": {
+    "scale": {
+      "color": "shared"
+    }
   },
   "config": {
     "font": "Inter",
     "view": {
       "stroke": null
     },
-    "title": {
-      "fontSize": 20,
-      "subtitleFontSize": 12,
-      "subtitlePadding": 8,
-      "color": "#253248"
+    "axis": {
+      "gridColor": "#E8E8E8",
+      "labelFontSize": 11,
+      "titleFontSize": 12
     },
-    "legend": {
-      "labelFontSize": 12,
-      "titleFontSize": 13,
-      "titlePadding": 10
+    "title": {
+      "subtitleFontSize": 12,
+      "subtitlePadding": 8
+    },
+    "concat": {
+      "spacing": 25
     }
   }
 }
