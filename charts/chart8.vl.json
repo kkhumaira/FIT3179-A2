@@ -32,7 +32,7 @@
     }
   ],
   "data": {
-  "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/australia_metro_regional.geojson?v=2",
+  "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/australia_metro_regional.geojson",
   "format": {
     "type": "json",
     "property": "features"
