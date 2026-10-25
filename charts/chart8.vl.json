@@ -32,11 +32,11 @@
     }
   ],
   "data": {
-    "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/GCCSA/MapServer/0/query?where=gccsa_code_2021%20IN%20%28%271GSYD%27,%271RNSW%27,%272GMEL%27,%272RVIC%27,%273GBRI%27,%273RQLD%27,%274GADE%27,%274RSAU%27,%275GPER%27,%275RWAU%27,%276GHOB%27,%276RTAS%27,%277GDAR%27,%277RNTE%27,%278ACTE%27%29&outFields=gccsa_code_2021,gccsa_name_2021&outSR=4326&maxAllowableOffset=0.01&f=geojson",
-    "format": {
-      "type": "json",
-      "property": "features"
-    }
+  "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/australia_metro_regional.geojson?v=2",
+  "format": {
+    "type": "json",
+    "property": "features"
+  }
   },
   "transform": [
     {
