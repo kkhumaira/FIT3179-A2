@@ -104,6 +104,7 @@
                       "test": "datum.segment == 'percentage'",
                       "field": "age_group",
                       "type": "nominal",
+                      "legend": null,
                       "scale": {
                         "range": [
                           "#0072B2",
@@ -114,8 +115,8 @@
                         ]
                       }
                     },
-                    "value": "#E5E7EB",
-                    "legend": null
+                    "value": "#E5E7EB"
+
                   },
                   "order": {
                     "field": "segment",
@@ -223,10 +224,10 @@
             }
           ],
           "width": 700,
-          "height": 300,
+          "height": 350,
           "mark": {
             "type": "bar",
-            "color": "#007E5D",
+            "color": "#7B3F8C",
             "cornerRadiusEnd": 4,
             "size": 14
           },

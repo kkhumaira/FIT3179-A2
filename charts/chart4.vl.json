@@ -10,7 +10,7 @@
     "type": "fit-x",
     "contains": "padding"
   },
-  "height": 380,
+  "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/viewing_hours.csv",
     "format": {

@@ -56,7 +56,7 @@
   "vconcat": [
     {
       "name": "groupButtons",
-      "width": 400,
+      "width": 1200,
       "height": 35,
       "data": {
         "values": [
@@ -103,7 +103,7 @@
     },
     {
       "name": "mediaButtons",
-      "width": 1000,
+      "width": 1200,
       "height": 35,
       "data": {
         "values": [
@@ -173,7 +173,7 @@
         {
           "name": "mapView",
           "width": 440,
-          "height": 340,
+          "height": 350,
           "data": {
             "url": "https://raw.githubusercontent.com/kkhumaira/FIT3179-A2/main/data/australia_metro_regional_fixed.geojson",
             "format": {
@@ -230,8 +230,8 @@
           }
         },
         {
-          "width": 380,
-          "height": 340,
+          "width": 550,
+          "height": 350,
           "title": {
             "text": {
               "expr": "chosenMedia.media_type && chosenMedia.media_type[0] != 'All media' ? chosenMedia.media_type[0] + ': Metro vs Regional' : (chosenGroup.location_group && chosenGroup.location_group[0] != 'All' ? chosenGroup.location_group[0] + ': all media' : 'Media use: Metro vs Regional')"

@@ -3,233 +3,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Australian Media Consumption</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
   <script src="https://cdn.jsdelivr.net/npm/vega@5" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6" defer></script>
   <script src="script.js" defer></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
 </head>
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to dashboard</a>
   <header class="hero">
     <div class="page-width">
-    <h1>
-    <span class="title-highlight">Australia's Media Consumption:</span>
-    </h1>
-
-      <p class="introduction">
-        Exploring how different generations stream, scroll and tune in across Australia’s changing digital and traditional media landscape.
-      </p>
+      <h1><span class="title-highlight">Australia’s Media Consumption</span></h1>
+      <p class="introduction">Exploring how different generations stream, scroll and tune in across Australia’s changing digital and traditional media landscape.</p>
     </div>
   </header>
+  <main id="main-content" class="page-width">
+    <section id="viewing" class="story-section" aria-labelledby="viewing-title">
 
-  <main class="page-width">
-
-    <!-- SHARED FILTER FOR CHARTS 2–4 -->
-    <section id="viewing" class="story-section">
-
-      <h2>1. The Evolution of Australia's Media Consumption.</h2>
-
-      <p class="section-introduction">
-        Compare media use across age groups, the gap between streaming
-        and broadcast TV, and average time spent watching.
-      </p>
-
+      <h2 id="viewing-title">1. The evolution of Australia’s media consumption</h2>
+      <p class="section-introduction">Screens offer more choice than ever. Explore how media use differs across age groups, compare streaming with broadcast television, and see where viewers spend their time.</p>
       <div class="filter-panel">
-        <div>
-          <label for="shared-year">Select survey year</label>
-          <p>This slider updates the three charts below.</p>
-        </div>
-
-        <div class="slider-control">
-          <input
-            id="shared-year"
-            type="range"
-            min="2022"
-            max="2025"
-            step="1"
-            value="2025"
-            disabled
-          >
-
-          <output id="year-value" for="shared-year">2025</output>
-        </div>
+        <div><label for="shared-year">Select survey year</label><p>This slider updates the three charts in this section.</p></div>
+        <div class="slider-control"><span aria-hidden="true">2022</span><input id="shared-year" type="range" min="2022" max="2025" step="1" value="2025" disabled><span aria-hidden="true">2025</span><output id="year-value" for="shared-year">2025</output></div>
       </div>
-
-      <p id="filter-status" role="status" aria-live="polite"></p>
-
-      <!-- CHART 2 -->
-      <article class="chart-card">
-        <div
-          id="chart2"
-          class="chart-container"
-          aria-label="Media use by age heatmap"
-        >
-          <p class="loading">Loading chart…</p>
-        </div>
-
+      <p id="filter-status" class="filter-status" role="status" aria-live="polite">Loading linked charts…</p>
+      <article class="chart-card"><div id="chart2" class="chart-container" aria-label="Media use by age heatmap"><p class="loading">Loading chart…</p></div></article>
+      <article class="chart-card chart3-layout">
+        <div id="chart3" class="chart-container" aria-label="Streaming versus broadcast television by age"><p class="loading">Loading chart…</p></div>
+        <aside class="chart3-annotations" aria-label="How to read the comparison">
+          <div class="annotation"><h3>Younger adults favour streaming</h3><p>Around three-quarters of 25–34-year-olds use paid streaming, compared with roughly three in ten watching broadcast TV.</p></div>
+          <div class="annotation"><h3>The gap closes with age</h3><p>Streaming and broadcast TV reach similar proportions of 55–64-year-olds. From age 65, broadcast TV takes the lead.</p></div>
+          <div class="annotation"><h3>Broadcast TV remains strong among older Australians</h3><p>Around three-quarters of people aged 75+ watch broadcast TV, while fewer than half use paid streaming.</p></div>
+        </aside>
       </article>
+      <article class="chart-card"><div id="chart4" class="chart-container" aria-label="Average weekly viewing hours"><p class="loading">Loading chart…</p></div></article>
+    </section>
+    <section id="streaming" class="story-section" aria-labelledby="streaming-title">
 
-      <!-- CHART 3 -->
+      <h2 id="streaming-title">2. Who leads the streaming shift?</h2>
+
+<p class="section-introduction">
+  Drawing on published survey responses from Australian adults,
+  this section follows
+  <strong>paid subscription streaming from 2017 to 2025</strong>.
+  Figures show the percentage of each age group using a paid
+  streaming service in the previous seven days.
+</p>
+<p><i>Click the years below the bump chart to see the real values in the right bar chart.</i></p>
+
+<article class="chart-card chart3-layout">
+
+  <div
+    id="chart1"
+    class="chart-container"
+    aria-label="Streaming rankings over time and selected-year comparison"
+  >
+    <p class="loading">Loading chart…</p>
+  </div>
+
+  <aside
+    class="chart3-annotations"
+    aria-label="Understanding streaming across generations"
+  >
+
+    <div class="annotation">
+      <h3>Middle-aged adults lead in 2025</h3>
+      <p>
+        The 18–24 group moves from first place in 2017 to fourth in 2025, when 70.1% report using paid streaming. A lower rank does not necessarily mean their usage declined.
+      </p>
+    </div>
+
+    <div class="annotation">
+      <h3>The youngest adults no longer rank first</h3>
+      <p>
+        Select a year to compare streaming use among younger
+        and older Australians. Look at the percentages to see
+        how far apart the age groups are.
+      </p>
+    </div>
+
+    <div class="annotation">
+      <h3>A generation gap remains</h3>
+      <p>
+        In 2025, streaming use is 43.7% among people aged 75+, compared with 74.6% among 45–54-year-olds—a gap of 30.9 percentage points.
+      </p>
+    </div>
+
+  </aside>
+
+</article>
+
+</section>
+
+<section
+  id="social"
+  class="story-section"
+  aria-labelledby="social-title"
+>
+
+      <h2 id="social-title">3. Australia’s social media landscape</h2>
+      <p class="section-introduction">Social platforms bring news and video into the same feed. Explore the age and platform comparisons below, paying attention to the measure and survey year shown on each chart.</p>
+      <article class="chart-card"><div id="chart5" class="chart-container" aria-label="Social media use comparisons"><p class="loading">Loading chart…</p></div></article>
+    </section>
+    <section id="music" class="story-section" aria-labelledby="music-title">
+
+      <h2 id="music-title">4. How Australians consume music</h2>
+      <p class="section-introduction">The shift to streaming extends beyond video. Compare <strong>free and paid music streaming across generations</strong>, then explore participation across states and territories.</p>
+      <article class="chart-card"><div id="chart6" class="chart-container" aria-label="Music streaming by age"><p class="loading">Loading chart…</p></div></article>
       <article class="chart-card">
 
   <div class="chart3-layout">
 
-    <!-- LEFT COLUMN: CHART -->
     <div
-      id="chart3"
+      id="chart7"
       class="chart-container"
-      aria-label="Streaming versus broadcast television comparison"
+      aria-label="Music streaming by state and territory"
     >
       <p class="loading">Loading chart…</p>
     </div>
 
-    <!-- RIGHT COLUMN: ANNOTATIONS -->
-    <div class="chart3-annotations">
+    <aside
+      class="chart3-annotations"
+      aria-label="Music streaming findings by state"
+    >
 
       <div class="annotation">
-        <h3>Streaming leads among younger Australians</h3>
+        <h3>Younger listeners favour paid streaming</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris efficitur scelerisque velit eget convallis. In hac habitasse platea dictumst.
+          Among 15–24-year-olds, 77.3% use paid music streaming, compared with 68.0% using free services.
         </p>
       </div>
 
       <div class="annotation">
-        <h3>Viewing preferences shift with age</h3>
+        <h3>Free streaming leads from age 35</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris efficitur scelerisque velit eget convallis. In hac habitasse platea dictumst. 
+          Free streaming becomes more common than paid subscriptions among people aged 35 and over. For those aged 65+, free streaming reaches 39.1%, compared with 18.6% for paid services.
+        </p>
+      </div>
 
-    </div>
+      <div class="annotation">
+        <h3>Music streaming varies across Australia</h3>
+        <p>
+          Participation ranges from 67.3% in the Northern Territory to 83.3% in the ACT—a difference of 16 percentage points in 2022.
+        </p>
+      </div>
+
+    </aside>
 
   </div>
 
+
 </article>
-
-      <!-- CHART 4 -->
-      <article class="chart-card">
-
-        <div
-          id="chart4"
-          class="chart-container"
-          aria-label="Average weekly viewing hours"
-        >
-          <p class="loading">Loading chart…</p>
-        </div>
-
-      </article>
     </section>
-
-        <!-- CHART 1 -->
-    <section id="streaming" class="story-section">
-
-      <h2>2. Streaming Across Generations.</h2>
-
-      <p class="section-introduction">
-        Drawing on survey responses from Australian adults, this section explores how <strong>paid subscription streaming</strong> use differs across generations and has changed from <strong> 2017 to 2025</strong>. The figures represent the percentage of each age group who reported using a paid streaming service in the previous seven days.
-        <br> 
-        <h4>
-        <strong>Click the years below the bump chart to look further into the year.</strong> </h4>
-        <article class="chart-card">
-        <div
-          id="chart1"
-          class="chart-container"
-          aria-label="Streaming rankings and selected-year comparison"
-        >
-          <p class="loading">Loading chart…</p>
-        </div>
-
-      </article>
-    </section>
-
-    <!-- CHART 5 -->
-    <section id="social" class="story-section">
-
-      <h2>3. Australia's Social Media Landscape.</h2>
-
-      <article class="chart-card">
-        <div
-          id="chart5"
-          class="chart-container"
-          aria-label="Social platform account ownership and use"
-        >
-          <p class="loading">Loading chart…</p>
-        </div>
-      </article>
-
-      
-    </section>
-
-        <section class="story-section">
-
-      <h2>4. How Australians Consume Music.</h2>
-
-      <article class="chart-card">
-        <div
-          id="chart7"
-          class="chart-container"
-          aria-label="Social platform account ownership and use"
-        >
-          <p class="loading">Loading chart…</p>
-        </div>
-
-        <div
-          id="chart6"
-          class="chart-container"
-          aria-label="Social platform account ownership and use"
-        >
-          <p class="loading">Loading chart…</p>
-        </div>
-      </article>
-  
-
     
+    <section id="geography" class="story-section" aria-labelledby="geography-title">
 
-    <!-- DATA NOTES -->
-    <section class="sources">
-      <h2>About the data</h2>
-
-      <p>
-        These charts use published survey aggregates. Media categories
-        can overlap, and questions and respondent bases differ between
-        sources. The shared slider aligns survey years; it does not
-        combine the surveys.
-      </p>
-
-      <ul>
-        <li>
-          How we watch and listen to content data tables:
-          viewing by age, QF4.
-        </li>
-
-        <li>
-          Television &amp; Media Survey 2025 summary report:
-          historical viewing hours, C2, and social-platform measures,
-          SOCIAL1 and SOCIAL2.
-        </li>
-      </ul>
-
-      <p class="chart-note">
-        Add full references, verified source links and your author
-        details before submitting.
-      </p>
+      <h2 id="geography-title">5. Different places, different screens</h2>
+      <p class="section-introduction">Compare media use in <strong>capital cities and the rest of Australia</strong>. Choose a geographic group to explore its media habits, or choose a media type to compare both groups.</p>
+      <article class="chart-card"><div id="chart8" class="chart-container" aria-label="Interactive metropolitan and regional media comparison"><p class="loading">Loading chart…</p></div></article>
     </section>
+    <section id="inclusion" class="story-section" aria-labelledby="inclusion-title">
 
+  <h2 id="inclusion-title">6. Australia’s digital divide</h2>
+
+  <p class="section-introduction">
+    Media habits describe what people use. Digital inclusion adds context
+    about their opportunity to participate online, combining
+    <strong>access, affordability and digital ability</strong>.
+  </p>
+
+  <article class="chart-card">
+    <div class="chart3-layout">
+
+      <div
+        id="chart9"
+        class="chart-container"
+        aria-label="Digital inclusion scores by state and territory"
+      >
+        <p class="loading">Loading chart…</p>
+      </div>
+
+      <aside
+        class="chart3-annotations"
+        aria-label="Key digital inclusion findings"
+      >
+
+        <div class="annotation">
+          <h3>The ACT leads digital inclusion</h3>
+          <p>
+            With a score of <strong>79.5 out of 100</strong>, the ACT
+            sits <strong>6.0 points above</strong> the national average
+            of 73.6.
+          </p>
+        </div>
+
+        <div class="annotation">
+          <h3>Tasmania faces the largest gap</h3>
+          <p>
+            Tasmania records the lowest score at <strong>69.4</strong>,
+            around <strong>10.1 points below the ACT</strong>.
+          </p>
+        </div>
+
+        <div class="annotation">
+          <h3>Four jurisdictions fall below the national average</h3>
+          <p>
+            <strong>Queensland, South Australia, Tasmania and the
+            Northern Territory</strong> score below 73.6, highlighting
+            geographic differences in digital inclusion.
+          </p>
+        </div>
+
+      </aside>
+
+    </div>
+  </article>
+
+</section>
+    <section class="metadata" aria-label="Metadata information">
+  <p><em><u>Metadata Information</u></em></p>
+
+  <p><strong>Author:</strong> Keatara Khumaira</p>
+
+  <p><strong>Published:</strong> 29 October 2026</p>
+
+  <p>
+    <strong>Visualisation Software:</strong>
+    Vega-Lite, HTML, CSS, and JavaScript.
+  </p>
+
+  <p>
+    <strong>Sources:</strong>
+    [1] <em>How we watch and listen to content data tables</em>,
+    QF4, https://www.acma.gov.au/publications/2026-03/report/communications-and-media-australia-how-we-watch-and-listen-content;
+    [2] <em>Television &amp; Media Survey 2025</em>,
+    https://www.infrastructure.gov.au/media-communications/television/television-research-and-surveys;
+    [3] Creative Australia,
+    <em>National Arts Participation Survey 2022</em>,
+    https://creative.gov.au/research/creating-value-results-national-arts-participation-survey;
+    [4] <em>Australian Digital Inclusion Index</em>,
+    https://digitalinclusionindex.org.au/download-reports
+  </p>
+
+</section>
   </main>
-
-  <footer class="page-width">
-    Australian Media Consumption · FIT3179 Data Visualisation 2
-  </footer>
+  <footer class="page-width"><p>Australian Media Consumption · FIT3179 Data Visualisation 2</p></footer>
 </body>
 </html>

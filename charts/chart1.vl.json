@@ -39,8 +39,8 @@
             "subtitle": "Rank 1 = highest streaming use",
             "anchor": "start"
           },
-          "width": 500,
-          "height": 320,
+          "width": 320,
+          "height": 350,
           "encoding": {
             "x": {
               "field": "year",
@@ -134,7 +134,7 @@
                     "title": "Age group",
                     "orient": "right",
                     "direction": "vertical",
-                    "offset": 15,
+                    "offset": 0,
                     "anchor": "middle"
                   }
                 },
@@ -166,7 +166,7 @@
           ]
         },
         {
-          "width": 500,
+          "width": 100,
           "height": 30,
           "transform": [
             {
